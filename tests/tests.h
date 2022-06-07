@@ -48,7 +48,7 @@ TEST(load, regular_file)
 
 TEST(save, correct_saving)
 {
-    auto txt = txt_load(inputfile);
+    text txt = txt_load(inputfile);
     save(txt, "output.txt");
     std::ifstream file("output.txt");
     std::stringstream s;
