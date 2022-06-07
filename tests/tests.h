@@ -16,7 +16,7 @@ extern "C"{
     { action } \
     output = testing::internal::GetCapturedStdout();
 
-text txt_load(const char *filename)
+text txt_load(char *filename)
 {
  text txt = create_text();
     load(txt, filename);
