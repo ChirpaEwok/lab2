@@ -16,7 +16,12 @@ extern "C"{
     { action } \
     output = testing::internal::GetCapturedStdout();
 
-char* filename = "input.txt";
+text txt_load(const char *filename)
+{
+ text txt = create_text();
+    load(txt, filename);
+    return txt;
+}
 
 TEST(load, nonexistent_file)
 {
@@ -26,12 +31,28 @@ TEST(load, nonexistent_file)
     ASSERT_EQ(output, "The file nothing.txt cannot be opened\n");
 }
 
-TEST(load, unreadable_file)
+TEST(load, regular_file)
 {
-    text txt = create_text();
-    std::string output;
-    GetOutput(load(txt, "unreadable.txt");)
-    ASSERT_EQ(output, "The file unreadable.txt cannot be opened\n");
+    text txt = txt_load("input.txt");
+    std::ifstream f;
+    std::string s;
+    node *current = txt->begin;
+    while(std::getline(f, s))
+    {
+    EXPECT_EQ(current->contents, s);
+	current=current->next;
+    }
+}
+
+TEST(save, correct_saving)
+{
+    text txt = txt_load("input.txt");
+    save(txt, "output.txt");
+    std::ifstream file("output.txt");
+    std::stringstream s;
+    s << file.rdbuf();
+    ASSERT_EQ(s.str(), "1234\nqwer\nasdf\nz x c v\n");
+    remove_all(txt);
 }
 
 #endif
