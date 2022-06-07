@@ -26,4 +26,12 @@ TEST(load, nonexistent_file)
     ASSERT_EQ(output, "The file nothing.txt cannot be opened\n");
 }
 
+TEST(load, unreadable_file)
+{
+    text txt = create_text();
+    std::string output;
+    GetOutput(load(txt, "unreadable.txt");)
+    ASSERT_EQ(output, "The file unreadable.txt cannot be opened\n");
+}
+
 #endif
