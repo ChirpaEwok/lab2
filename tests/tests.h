@@ -2,8 +2,7 @@
 #define TESTS_H
 
 #include <gtest/gtest.h>
-#include <gmock/gmock-matchers.h>
-#include <string>
+#include <sstream>
 #include <fstream>
 
 extern "C"{
@@ -23,8 +22,8 @@ TEST(load, nonexistent_file)
 {
     text txt = create_text();
     std::string output;
-    GetOutput(load(txt, "nothing");)
-    ASSERT_EQ(output, "The file nothing cannot be opened\n");
+    GetOutput(load(txt, "nothing.txt");)
+    ASSERT_EQ(output, "The file nothing.txt cannot be opened\n");
 }
 
 #endif
