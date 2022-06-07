@@ -21,7 +21,6 @@ HEADERS += tests.h \
         ../app/text/*.h 
 
 SOURCES += main.cpp \
-  ../app/editor.c \
   ../app/text/*.c \
   ../app/functions/* 
 
