@@ -16,6 +16,8 @@ extern "C"{
     { action } \
     output = testing::internal::GetCapturedStdout();
 
+char *inputfile = INPUTDIR "/input.txt";
+
 text txt_load(char *filename)
 {
 	text txt = create_text();
@@ -33,7 +35,7 @@ TEST(load, nonexistent_file)
 
 TEST(load, regular_file)
 {
-    text txt = txt_load('input.txt');
+    text txt = txt_load(inputfile);
     std::ifstream f;
     std::string s;
     node *current = txt->begin;
@@ -46,7 +48,7 @@ TEST(load, regular_file)
 
 TEST(save, correct_saving)
 {
-    text txt = txt_load('input.txt');
+    text txt = txt_load(inputfile);
     save(txt, "output.txt");
     std::ifstream file("output.txt");
     std::stringstream s;
