@@ -33,7 +33,7 @@ TEST(load, nonexistent_file)
 
 TEST(load, regular_file)
 {
-    text txt = txt_load("input.txt");
+    text txt = txt_load('input.txt');
     std::ifstream f;
     std::string s;
     node *current = txt->begin;
@@ -46,7 +46,7 @@ TEST(load, regular_file)
 
 TEST(save, correct_saving)
 {
-    text txt = txt_load("input.txt");
+    text txt = txt_load('input.txt');
     save(txt, "output.txt");
     std::ifstream file("output.txt");
     std::stringstream s;
