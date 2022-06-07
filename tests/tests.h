@@ -23,7 +23,7 @@ TEST(load, nonexistent_file)
 {
     text txt = create_text();
     std::string output;
-    GetOutput(load(txt, nothing);)
+    GetOutput(load(txt, "nothing");)
     ASSERT_EQ(output, "The file nothing cannot be opened\n");
 }
 
