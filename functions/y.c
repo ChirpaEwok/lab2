@@ -3,7 +3,7 @@
 
 #include "../text/_text.h"
 #include "../text/text.h"
-#include "../common.h"
+#include "../app/common.h"
 
 void y(text txt, char *str)
 {
