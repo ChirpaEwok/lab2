@@ -27,6 +27,7 @@ void move(text txt, int m, int n)
     }
 	if (cpit < m) {
 		txt->cursor->line = txt->end;
+		current = txt->end;
 	} else {
     		txt->cursor->line = current;
 	}
