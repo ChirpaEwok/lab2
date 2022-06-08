@@ -36,7 +36,7 @@ static void show_line(int index, char *contents, int cursor, void *data)
     /* Декларируем неиспользуемые параметры */
     UNUSED(index);
     UNUSED(data);
-    int cln = strlen(contents);
+    int cln = (int)strlen(contents);
     int maxln = cln - 1;
     int reqpos = maxln > cursor ? maxln: cursor;
 
