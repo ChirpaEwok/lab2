@@ -51,7 +51,6 @@ TEST(save, correct_saving)
     text txt = txt_load(inputfile);
     save(txt, "output.txt");
     text out = txt_load("output.txt");
-    show(out);
     std::ifstream file("output.txt");
     std::stringstream s;
     s << file.rdbuf();
@@ -63,8 +62,8 @@ TEST(save, save_to_not_writable_file)
 {
     text txt = txt_load(inputfile);
     std::string output;	
-    GetOutput(save(txt, "immutable.txt"););
-    ASSERT_EQ(output, "The file immutable.txt cannot be written\n");
+    GetOutput(save(txt, "dev/mem"););
+    ASSERT_EQ(output, "The file dev/mem cannot be written\n");
     remove_all(txt);
 }
 
