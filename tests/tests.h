@@ -66,4 +66,21 @@ TEST(save, save_to_not_writable_file)
     remove_all(txt);
 }
 
+TEST(show, correct_showing)
+{
+	text txt = txt_load(inputfile);
+	std::string output;
+    GetOutput(show(txt);)
+    ASSERT_EQ(output, "1234\nqwer\nasdf\nz x c v\n");
+    remove_all(txt);
+}
+
+TEST(show, show_empty) {
+    auto txt = create_text();
+    std::string output;
+    GetErr(show(txt);)
+    ASSERT_EQ(output, "There are no lines left in the text!\n");
+    remove_all(txt);
+}
+
 #endif
