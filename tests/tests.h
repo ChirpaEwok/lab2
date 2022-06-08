@@ -71,6 +71,15 @@ TEST(save, save_to_not_writable_file)
     remove_all(txt);
 }
 
+TEST(save, nothing_to_save)
+{
+    text txt = create_text();
+    std::string output;	
+    GetOutput(save(txt, "output.txt"););
+    ASSERT_EQ(output, "Nothing to save\n");
+    remove_all(txt);
+}
+
 TEST(show, correct_showing)
 {
 	text txt = txt_load(inputfile);
