@@ -49,12 +49,7 @@ TEST(load, regular_file)
 TEST(save, correct_saving)
 {
     text txt = txt_load(inputfile);
-    node *current = txt->begin;
-    while(current)
-    {
-	printf("%s", current->contents);
-	current = current->next;
-    }
+    show(txt)
     save(txt, "output.txt");
     text out = txt_load("output.txt");
     show(out);
