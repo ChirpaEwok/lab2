@@ -105,6 +105,9 @@ TEST(move, correct_moving)
 	move(txt, 1, 1);
 	GetOutput(show(txt);)
 	ASSERT_EQ(output, "1234\nq|wer\nasdf\nz x c v\n");
+	move(txt, 1, 10);
+	GetOutput(show(txt);)
+	ASSERT_EQ(output, "1234\nqwer|\nasdf\nz x c v\n");
 	move(txt, 0, 10);
 	GetOutput(show(txt);)
 	ASSERT_EQ(output, "1234|\nqwer\nasdf\nz x c v\n");
