@@ -120,6 +120,16 @@ TEST(move, correct_moving)
 	remove_all(txt);
 }
 
+TEST(move, moving_in_empty)
+{
+	text txt = create_text();
+	std::string output;
+	move(txt, 1, 1);
+	GetOutput(show(txt);)
+	ASSERT_EQ(output, "|");
+	remove_all(txt);
+}
+
 TEST(showwordbeginnings, correct_showing)
 {
 	text txt = txt_load(inputfile);
