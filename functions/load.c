@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include "../text/_text.h"
 #include "../text/text.h"
-#include "../common.h"
+#include "../app/common.h"
 
 /**
  * Загружает содержимое указанного файла
