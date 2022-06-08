@@ -49,7 +49,7 @@ TEST(load, regular_file)
 TEST(save, correct_saving)
 {
     text txt = txt_load(inputfile);
-    show(txt)
+    show(txt);
     save(txt, "output.txt");
     text out = txt_load("output.txt");
     show(out);
