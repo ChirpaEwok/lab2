@@ -16,6 +16,11 @@ extern "C"{
     { action } \
     output = testing::internal::GetCapturedStdout();
 
+#define GetErr(action) \
+    testing::internal::CaptureStderr(); \
+    { action } \
+    output = testing::internal::GetCapturedStderr();
+
 char *inputfile = INPUTDIR "/input.txt";
 
 text txt_load(char *filename)
@@ -78,7 +83,7 @@ TEST(show, correct_showing)
 TEST(show, show_empty) {
     auto txt = create_text();
     std::string output;
-    GetOutput(show(txt);)
+    GetErr(show(txt);)
     ASSERT_EQ(output, "There are no lines left in the text!\n");
     remove_all(txt);
 }
