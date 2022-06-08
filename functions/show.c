@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include "../text/_text.h"
 #include "../text/text.h"
-#include "../common.h"
+#include "../app/common.h"
 
 static void show_line(int index, char *contents, int cursor, void *data);
 
