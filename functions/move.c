@@ -9,6 +9,8 @@
 
 void move(text txt, int m, int n)
 {
+	if (txt->length == 0)
+		return;
     int cpit = 0; /* current position in text */
     node *current = txt->begin;
 	int currentstrlen;
