@@ -95,19 +95,19 @@ TEST(move, correct_moving)
 	std::string output;
 	move(txt, 1, 1);
 	GetOutput(show(txt););
-	ASSERT_EQ(output, "1234\n|qwer\nasdf\nz x c v\n");
+	ASSERT_EQ(output, "1234\nq|wer\nasdf\nz x c v\n");
 	move(txt, 0, 10);
 	GetOutput(show(txt););
 	ASSERT_EQ(output, "1234|\nqwer\nasdf\nz x c v\n");
 	move(txt, 2, -10);
 	GetOutput(show(txt););
-	ASSERT_EQ(output, "1234\nqwer\|nasdf\nz x c v\n");
+	ASSERT_EQ(output, "1234\nqwer\n|asdf\nz x c v\n");
 	move(txt, -1, 1);
 	GetOutput(show(txt););
 	ASSERT_EQ(output, "|1234\nqwer\nasdf\nz x c v\n");
 	move(txt, 4, 1);
 	GetOutput(show(txt););
-	ASSERT_EQ(output, "|1234\nqwer\nasdf\nz x c v\n");
+	ASSERT_EQ(output, "1234\nqwer\nasdf\nz x c v|\n");
 	remove_all(txt);
 }
 
