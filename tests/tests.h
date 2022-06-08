@@ -50,7 +50,7 @@ TEST(save, correct_saving)
 {
     text txt = txt_load(inputfile);
     node *current = txt->begin;
-    while(current)
+    while(current != txt->end)
     {
 	printf("%s", current->contents);
 	current->next;
