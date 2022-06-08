@@ -159,4 +159,14 @@ TEST(y, overflow)
 	remove_all(txt);
 }
 
+TEST(ce, correct_working)
+{
+	text txt = txt_load(inputfile);
+	std::string output;
+	move(txt, 1, 1);
+	GetOutput(ce(txt));
+	ASSERT_EQ(output, "1234\nasdf\nz x c v\nq|werty\n");
+	remove_all(txt);
+}
+
 #endif
