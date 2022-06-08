@@ -18,13 +18,13 @@ DEFINES += INPUTDIR=\\\"$$PWD/\\\"
 
 HEADERS += tests.h \
         ../app/common.h \
-        ../app/text/*.h 
+        ../text/*.h 
 
 SOURCES += main.cpp \
-  ../app/text/*.c \
-  ../app/functions/* 
+  ../text/*.c \
+  ../functions/* 
 
 INCLUDEPATH += ../app \
-  ../app/text
+  ../text
 
 DISTFILES += input.txt
