@@ -11,25 +11,23 @@ void move(text txt, int m, int n)
 {
     int cpit = 0; /* current position in text */
     node *current = txt->begin;
-	if (m < 0)
+	if (m <= 0)
 	{
 		txt->cursor->line = txt->begin;
 		txt->cursor->position = n;
 		return;
 	}
-    while(current)
+    while(current != txt->end)
     {
 		if (cpit == m)     
 	    	break;
 	    current = current->next;
-		if (current->next)
-			cpit++;
+		cpit++;
     }
 	if (cpit < m) {
 		txt->cursor->line = txt->end;
-		current = txt->end;
 	} else {
-    		txt->cursor->line = current;
+    	txt->cursor->line = current;
 	}
     int currentstrlen = (int)strlen(current->contents) - 1;
     if (n <= currentstrlen) {
