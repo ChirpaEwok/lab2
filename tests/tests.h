@@ -34,7 +34,7 @@ TEST(load, nonexistent_file)
 {
     text txt = create_text();
     std::string output;
-    GetOutput(load(txt, "nothing.txt"););
+    GetErr(load(txt, "nothing.txt"););
     ASSERT_EQ(output, "The file nothing.txt cannot be opened\n");
 }
 
@@ -66,7 +66,7 @@ TEST(save, save_to_not_writable_file)
 {
     text txt = txt_load(inputfile);
     std::string output;	
-    GetOutput(save(txt, "usr/lib"););
+    GetErr(save(txt, "usr/lib"););
     ASSERT_EQ(output, "The file usr/lib cannot be written\n");
     remove_all(txt);
 }
