@@ -16,7 +16,7 @@ extern "C"{
     { action } \
     output = testing::internal::GetCapturedStdout();
 
-const char *inputfile = INPUTDIR "/input.txt";
+char *inputfile = INPUTDIR "/input.txt";
 
 text txt_load(char *filename)
 {
@@ -50,7 +50,6 @@ TEST(save, correct_saving)
 {
     text txt = txt_load(inputfile);
     save(txt, "output.txt");
-    text out = txt_load("output.txt");
     std::ifstream file("output.txt");
     std::stringstream s;
     s << file.rdbuf();
