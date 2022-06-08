@@ -6,8 +6,8 @@
 #include <fstream>
 
 extern "C"{
-    #include "../app/text/text.h"
-    #include "../app/text/_text.h"
+    #include "../text/text.h"
+    #include "../text/_text.h"
     #include "../app/common.h"
 }
 
