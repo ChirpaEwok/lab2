@@ -21,10 +21,11 @@ void move(text txt, int m, int n)
     {
 		if (cpit == m)     
 	    	break;
+		else {
 	    current = current->next;
 		cpit++;
+		}
     }
-	cpit--;
 	if (cpit < m) {
 		txt->cursor->line = txt->end;
 	} else {
