@@ -14,7 +14,7 @@ jobs:
       - run: ./tests/tests
 
       - name: Coveralls
-        run: coveralls -t ${{ secrets.coveralls_token }} --root . -E ".*external.*" -E ".*tests.*" -E ".*editor.*" -E ".*editor/text.*" -E ".*editor/functions.*"
+        run: coveralls -t ${{ secrets.coveralls_token }} --root . -E ".*external.*" -E ".*tests.*"
 
   sonarcloud-check:
     needs: gtest-tests
