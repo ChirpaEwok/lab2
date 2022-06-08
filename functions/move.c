@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "../text/_text.h"
 #include "../text/text.h"
-#include "../common.h"
+#include "../app/common.h"
 
 /**
  * Перемещает курсор на n-ый символ m-ой cтроки
