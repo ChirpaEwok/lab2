@@ -62,8 +62,8 @@ TEST(save, save_to_not_writable_file)
 {
     text txt = txt_load(inputfile);
     std::string output;	
-    GetOutput(save(txt, "dev/mem"););
-    ASSERT_EQ(output, "The file dev/mem cannot be written\n");
+    GetOutput(save(txt, "notwritable.txt"););
+    ASSERT_EQ(output, "The file notwritable.txt cannot be written\n");
     remove_all(txt);
 }
 
