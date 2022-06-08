@@ -52,7 +52,7 @@ TEST(save, correct_saving)
     node *current = txt->begin;
     while(current)
     {
-	printf("%s", current->content);
+	printf("%s", current->contents);
 	current->next;
     }
     save(txt, "output.txt");
