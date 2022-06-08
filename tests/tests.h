@@ -57,7 +57,7 @@ TEST(save, correct_saving)
     }
     save(txt, "output.txt");
     text out = txt_load("output.txt");
-    show();
+    show(out);
     std::ifstream file("output.txt");
     std::stringstream s;
     s << file.rdbuf();
