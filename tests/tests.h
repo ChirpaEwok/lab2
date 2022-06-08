@@ -119,7 +119,7 @@ TEST(showwordbeginnings, correct_showing)
 
 TEST(showwordbeginnings, show_empty)
 {
-	text txt = txt_load(inputfile);
+	text txt = create_text();
 	std::string output;
 	GetErr(showwordbeginnings(txt););
 	ASSERT_EQ(output, "There are already no any lines in the text!\n");
