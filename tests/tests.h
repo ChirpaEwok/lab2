@@ -117,4 +117,13 @@ TEST(showwordbeginnings, correct_showing)
 	remove_all(txt);
 }
 
+TEST(showwordbeginnings, show_empty)
+{
+	text txt = txt_load(inputfile);
+	std::string output;
+	GetErr(showwordbeginnings(txt););
+	ASSERT_EQ(output, "There are already no any lines in the text!\n");
+    remove_all(txt);
+}
+
 #endif
