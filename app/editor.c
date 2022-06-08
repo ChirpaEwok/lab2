@@ -74,7 +74,7 @@ int main()
                 save(txt, arg);
             }
 	    continue;
-	}
+	  }
 
 	/* Передвежение курсора по тексту */
 	if (strcmp(cmd, "move") == 0) {
@@ -88,7 +88,6 @@ int main()
 	}
 
 	if (strcmp(cmd, "y") == 0) {
-	    
 	    if ((arg = strtok(NULL, "\n")) == NULL) {
 		fprintf(stderr, "Usage: y string you want to insert\n");
 	    } else {
@@ -105,6 +104,6 @@ int main()
         /* Если команда не известна */
         fprintf(stderr, "Unknown command: %s\n", cmd);
     }
-
+	
     return 0;
 }
