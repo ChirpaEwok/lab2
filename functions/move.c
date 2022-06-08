@@ -19,11 +19,12 @@ void move(text txt, int m, int n)
 	}
     while(current)
     {
-	    current = current->next;
-		cpit++;
 		if (cpit == m)     
 	    	break;
+	    current = current->next;
+		cpit++;
     }
+	cpit--;
 	if (cpit < m) {
 		txt->cursor->line = txt->end;
 	} else {
