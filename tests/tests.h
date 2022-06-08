@@ -16,7 +16,7 @@ extern "C"{
     { action } \
     output = testing::internal::GetCapturedStdout();
 
-char *inputfile = INPUTDIR "/input.txt";
+const char *inputfile = INPUTDIR "/input.txt";
 
 text txt_load(char *filename)
 {
