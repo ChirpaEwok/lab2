@@ -112,7 +112,7 @@ TEST(showwordbeginnings, correct_showing)
 {
 	text txt = txt_load(inputfile);
 	std::string output;
-	GetOutput(swb(txt););
+	GetOutput(showwordbeginnings(txt););
 	ASSERT_EQ(output, "1\nq\na\nzxcv\n");
 	remove_all(txt);
 }
