@@ -8,8 +8,8 @@
 void y(text txt, char *str)
 {
     char *swc = txt->cursor->line->contents; /* string with cursor */
-    int csl = strlen(swc); /* current srting length */
-    int isl = strlen(str); /* input string length */
+    int csl = (int)strlen(swc); /* current srting length */
+    int isl = (int)strlen(str); /* input string length */
     int cp = txt->cursor->position; /* cursor position */
     if (isl + csl > MAXLINE)
     {
