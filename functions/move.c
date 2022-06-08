@@ -19,7 +19,7 @@ void move(text txt, int m, int n)
 	cpis++;
     }
     txt->cursor->line = current;
-    int currentstrlen = strlen(current->contents) - 1;
+    int currentstrlen = (int)strlen(current->contents) - 1;
     if (n <= currentstrlen)
     {
 	txt->cursor->position = n;
