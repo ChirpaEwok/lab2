@@ -78,7 +78,7 @@ TEST(show, correct_showing)
 TEST(show, show_empty) {
     auto txt = create_text();
     std::string output;
-    GetErr(show(txt);)
+    GetOutput(show(txt);)
     ASSERT_EQ(output, "There are no lines left in the text!\n");
     remove_all(txt);
 }
