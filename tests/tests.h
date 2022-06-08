@@ -126,4 +126,18 @@ TEST(showwordbeginnings, show_empty)
     remove_all(txt);
 }
 
+TEST(y, correct_replacment)
+{
+	text txt = txt_load(inputfile);
+	std::string output;
+	move(1, 1);
+	GetOutput(y(txt, "rt"););
+	ASSERT_EQ(output, "1234\nq|rt\nasdf\nz x c v\n");
+	GetOutput(y(txt, "werty"););
+	ASSERT_EQ(output, "1234\nq|werty\nasdf\nz x c v\n");
+	GetOutput(y(txt, ""););
+	ASSERT_EQ(output, "1234\nq| \nasdf\nz x c v\n");
+	remove_all(txt);
+}
+
 #endif
