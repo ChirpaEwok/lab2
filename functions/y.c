@@ -11,7 +11,7 @@ void y(text txt, char *str)
     int csl = strlen(swc); /* current srting length */
     int isl = strlen(str); /* input string length */
     int cp = txt->cursor->position; /* cursor position */
-    if (isl - csl > MAXLINE)
+    if (isl + csl > MAXLINE)
     {
 	fprintf(stderr, "Too many letters\n");
 	return;
