@@ -174,4 +174,14 @@ TEST(ce, correct_working)
 	remove_all(txt);
 }
 
+
+TEST(ce, ce_empty)
+{
+	text txt = create_text();
+	std::string output;
+	GetOutput(ce(txt);)
+	ASSERT_EQ(output, "");
+	remove_all(txt);
+}
+
 #endif
