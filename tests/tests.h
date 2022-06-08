@@ -29,7 +29,7 @@ TEST(load, nonexistent_file)
 {
     text txt = create_text();
     std::string output;
-    GetOutput(load(txt, "nothing.txt");)
+    GetOutput(load(txt, "nothing.txt"););
     ASSERT_EQ(output, "The file nothing.txt cannot be opened\n");
 }
 
@@ -56,6 +56,15 @@ TEST(save, correct_saving)
     std::stringstream s;
     s << file.rdbuf();
     ASSERT_EQ(s.str(), "1234\nqwer\nasdf\nz x c v\n");
+    remove_all(txt);
+}
+
+TEST(save, save_to_not_writable_file)
+{
+    text txt = txt_load(inputfile);
+    std::string output;	
+    GetOutput(save(txt, "immutable.txt"););
+    ASSERT_EQ(output, "The file immutable.txt cannot be written\n");
     remove_all(txt);
 }
 
