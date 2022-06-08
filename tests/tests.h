@@ -80,12 +80,35 @@ TEST(show, correct_showing)
     remove_all(txt);
 }
 
-TEST(show, show_empty) {
-    auto txt = create_text();
+TEST(show, show_empty)
+{
+    text txt = create_text();
     std::string output;
     GetErr(show(txt);)
     ASSERT_EQ(output, "There are already no any lines in the text!\n");
     remove_all(txt);
+}
+
+TEST(move, correct_moving)
+{
+	text txt = txt_load(inputfile);
+	std::string output;
+	move(txt, 1, 1);
+	GetOutput(show(txt););
+	ASSERT_EQ(output, "1234\n|qwer\nasdf\nz x c v\n");
+	move(txt, 0, 10);
+	GetOutput(show(txt););
+	ASSERT_EQ(output, "1234|\nqwer\nasdf\nz x c v\n");
+	move(txt, 2, -10);
+	GetOutput(show(txt););
+	ASSERT_EQ(output, "1234\nqwer\|nasdf\nz x c v\n");
+	move(txt, -1, 1);
+	GetOutput(show(txt););
+	ASSERT_EQ(output, "|1234\nqwer\nasdf\nz x c v\n");
+	move(txt, 4, 1);
+	GetOutput(show(txt););
+	ASSERT_EQ(output, "|1234\nqwer\nasdf\nz x c v\n");
+	remove_all(txt);
 }
 
 #endif
