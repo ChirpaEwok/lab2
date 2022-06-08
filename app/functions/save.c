@@ -31,5 +31,5 @@ void save(text txt, char *newfilename)
 	fprintf(f, "%s", current->contents);
 	current = current->next;
     }
-    fclose(file);
+    fclose(f);
 }
