@@ -165,9 +165,9 @@ TEST(ce, correct_working)
 	std::string output;
 	move(txt, 1, 1);
 	GetOutput(ce(txt););
-	ASSERT_EQ(output, "1234\nasdf\nz x c v\nq|werty\n");
+	ASSERT_EQ(output, "1234\nasdf\nz x c v\nq|wer\n");
 	GetOutput(ce(txt););
-	ASSERT_EQ(output, "1234\nasdf\nz x c v\nq|werty\n");
+	ASSERT_EQ(output, "1234\nasdf\nz x c v\nq|wer\n");
 	remove_all(txt);
 }
 
