@@ -135,7 +135,7 @@ TEST(y, correct_replacment)
 	ASSERT_EQ(output, "1234\nq|rt\nasdf\nz x c v\n");
 	GetOutput(y(txt, "werty"););
 	ASSERT_EQ(output, "1234\nq|werty\nasdf\nz x c v\n");
-	GetOutput(y(txt, ""););
+	GetOutput(y(txt, " "););
 	ASSERT_EQ(output, "1234\nq| \nasdf\nz x c v\n");
 	remove_all(txt);
 }
