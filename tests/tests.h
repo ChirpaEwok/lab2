@@ -49,6 +49,12 @@ TEST(load, regular_file)
 TEST(save, correct_saving)
 {
     text txt = txt_load(inputfile);
+    node *current = txt->begin;
+    while(current)
+    {
+	printf("%s", current->content);
+	current->next;
+    }
     save(txt, "output.txt");
     std::ifstream file("output.txt");
     std::stringstream s;
