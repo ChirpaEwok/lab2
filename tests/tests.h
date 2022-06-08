@@ -50,12 +50,14 @@ TEST(save, correct_saving)
 {
     text txt = txt_load(inputfile);
     node *current = txt->begin;
-    while(current != txt->end)
+    while(current)
     {
 	printf("%s", current->contents);
-	current->next;
+	current = current->next;
     }
     save(txt, "output.txt");
+    text out = txt_load("output.txt");
+    show();
     std::ifstream file("output.txt");
     std::stringstream s;
     s << file.rdbuf();
