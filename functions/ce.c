@@ -2,7 +2,7 @@
 
 #include "../text/_text.h"
 #include "../text/text.h"
-#include "../common.h"
+#include "../app/common.h"
 
 void ce(text txt)
 {
