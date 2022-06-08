@@ -13,8 +13,8 @@ void move(text txt, int m, int n)
     node *current = txt->begin;
 	if (m < 0)
 	{
-		txt->cursor->line = 0;
-		txt->cursor->position = 0;
+		txt->cursor->line = txt->begin;
+		txt->cursor->position = n;
 		return;
 	}
     while(current)
