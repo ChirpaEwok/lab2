@@ -166,6 +166,8 @@ TEST(ce, correct_working)
 	move(txt, 1, 1);
 	GetOutput(ce(txt););
 	ASSERT_EQ(output, "1234\nasdf\nz x c v\nq|werty\n");
+	GetOutput(ce(txt););
+	ASSERT_EQ(output, "1234\nasdf\nz x c v\nq|werty\n");
 	remove_all(txt);
 }
 
