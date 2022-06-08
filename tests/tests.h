@@ -126,7 +126,7 @@ TEST(move, moving_in_empty)
 	std::string output;
 	move(txt, 1, 1);
 	GetOutput(show(txt);)
-	ASSERT_EQ(output, "|");
+	ASSERT_EQ(output, "");
 	remove_all(txt);
 }
 
