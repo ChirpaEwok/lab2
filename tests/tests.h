@@ -104,10 +104,10 @@ TEST(move, correct_moving)
 	ASSERT_EQ(output, "1234\nqwer\n|asdf\nz x c v\n");
 	move(txt, -1, 1);
 	GetOutput(show(txt););
-	ASSERT_EQ(output, "|1234\nqwer\nasdf\nz x c v\n");
+	ASSERT_EQ(output, "1|234\nqwer\nasdf\nz x c v\n");
 	move(txt, 4, 1);
 	GetOutput(show(txt););
-	ASSERT_EQ(output, "1234\nqwer\nasdf\nz x c v|\n");
+	ASSERT_EQ(output, "1234\nqwer\nasdf\nz| x c v\n");
 	remove_all(txt);
 }
 
