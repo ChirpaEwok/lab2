@@ -20,7 +20,7 @@ void move(text txt, int m, int n)
 			txt->cursor->position = n;
     	} else {
 			txt->cursor->position = currentstrlen;
-    }
+    	}
 		return;
 	}
     while(current != txt->end)
