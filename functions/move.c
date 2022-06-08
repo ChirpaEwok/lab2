@@ -9,14 +9,20 @@
 
 void move(text txt, int m, int n)
 {
-    int cpis = 0; /* current position in string */
+    int cpit = 0; /* current position in text */
     node *current = txt->begin;
+	if (m < 0)
+	{
+		txt->cursor->line = 0;
+		txt->cursor->position = 0;
+		return;
+	}
     while(current)
     {
-		if (cpis == m)     
+		if (cpit == m)     
 	    	break;
 		current = current->next;
-		cpis++;
+		cpit++;
     }
     txt->cursor->line = current;
     int currentstrlen = (int)strlen(current->contents) - 1;
@@ -29,7 +35,5 @@ void move(text txt, int m, int n)
 		txt->cursor->position = currentstrlen;
     }
 	if (n < 0)
-	{
-		txt->cursor->position = 0;	
-	}
+		txt->cursor->position = 0;
 }
