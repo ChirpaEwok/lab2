@@ -24,17 +24,15 @@ void move(text txt, int m, int n)
 		current = current->next;
 		cpit++;
     }
-	if (cpit < m)
+	if (cpit < m) {
 		txt->cursor->line = txt->end;
-	else
+	} else {
     	txt->cursor->line = current;
+	}
     int currentstrlen = (int)strlen(current->contents) - 1;
-    if (n <= currentstrlen)
-    {
+    if (n <= currentstrlen) {
 		txt->cursor->position = n;
-    }
-    else
-    {
+    } else {
 		txt->cursor->position = currentstrlen;
     }
 	if (n < 0)
