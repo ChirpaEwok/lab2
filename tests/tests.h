@@ -84,7 +84,7 @@ TEST(show, show_empty) {
     auto txt = create_text();
     std::string output;
     GetErr(show(txt);)
-    ASSERT_EQ(output, "There are no lines left in the text!\n");
+    ASSERT_EQ(output, "There are already no any lines in the text!\n");
     remove_all(txt);
 }
 
