@@ -102,9 +102,18 @@ TEST(move, correct_moving)
 {
 	text txt = txt_load(inputfile);
 	std::string output;
-	move(txt, 1, 1);
+	move(txt, 1, 3);
 	GetOutput(show(txt);)
-	ASSERT_EQ(output, "1234\nq|wer\nasdf\nz x c v\n");
+	ASSERT_EQ(output, "1234\nqwe|r\nasdf\nz x c v\n");
+	move(txt, 0, 0);
+	GetOutput(show(txt);)
+	ASSERT_EQ(output, "|1234\nqwer\nasdf\nz x c v\n");
+}
+
+TEST(move, moving_out_of_bounds)
+{
+	text txt = txt_load(inputfile);
+	std::string output;
 	move(txt, 1, 10);
 	GetOutput(show(txt);)
 	ASSERT_EQ(output, "1234\nqwer|\nasdf\nz x c v\n");
