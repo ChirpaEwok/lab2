@@ -30,6 +30,14 @@ text txt_load(char *filename)
  	return txt;
 }
 
+TEST(load, nonexistent_file)
+{
+    text txt = create_text();
+    std::string output;
+    GetErr(load(txt, "nothing.txt");)
+    ASSERT_EQ(output, "The file nothing.txt cannot be opened\n");
+}
+
 TEST(load, regular_file)
 {
     text txt = txt_load(inputfile);
