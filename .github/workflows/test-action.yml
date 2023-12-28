@@ -32,10 +32,10 @@ jobs:
       - run: git submodule update
       - run: sudo apt-get update -y && sudo apt-get install -y qt5-qmake qtbase5-dev qtchooser qtbase5-dev-tools
       - run: qmake
-      - name: Set up JDK
+      - name: Set up JDK 18
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
+          distribution: '<distribution>'
           java-version: '21'
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
